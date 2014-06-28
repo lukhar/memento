@@ -1,2 +1,1 @@
 let g:syntastic_python_checkers = ['pylint', 'pep8', 'pyflakes', 'flake8']
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'

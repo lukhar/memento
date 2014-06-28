@@ -10,4 +10,4 @@ def main():
 
 @memento.route('/flashcard', methods=['GET', 'POST'])
 def add_falshcard():
-    return render_template('flashcard_form.html')
+    return render_template('add_flashcard.html')
