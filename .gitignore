@@ -12,11 +12,7 @@ build/
 develop-eggs/
 dist/
 eggs/
-lib/
-lib64/
 parts/
-sdist/
-var/
 target/
 *.egg-info/
 .installed.cfg
@@ -46,3 +42,6 @@ docs/_build/
 
 # local vim settings
 .lvimrc
+
+# mac stuff
+.DS_Store
