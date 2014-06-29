@@ -46,3 +46,6 @@ docs/_build/
 
 # local vim settings
 .lvimrc
+
+# mac stuff
+.DS_Store
