@@ -9,13 +9,12 @@ def main():
     return render_template('index.html')
 
 
-@memento.route('/flashcard', methods=['GET'])
-def falshcard():
-    return render_template('add_flashcard.html')
+@memento.route('/flashcard/new', methods=['GET'])
+def flashcard_form():
+    return render_template('new_flashcard_form.html')
 
 
 @memento.route('/flashcard', methods=['POST'])
 def add_flashcard():
-    print(request)
     FlashcardController().save(request.form)
     return 'saved!'
