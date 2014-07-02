@@ -16,3 +16,4 @@ def initialize(project):
     project.build_depends_on('flask')
     project.build_depends_on('nose')
     project.build_depends_on('pyassert')
+    project.build_depends_on('mongoengine')
