@@ -2,19 +2,19 @@
 {% block title %}Add new flashcard{% endblock title %}
 
 {% block content %}
-  <form class="form-horizontal" method="post" role="form">
+  <form action="/flashcard" class="form-horizontal" method="post" role="form">
 
     <div id="flashcard-front" class="form-group">
-      <label for="front-content" class="col-sm-2 control-label">Question</label>
+      <label for="front-content" class="col-sm-2 control-label">Problem</label>
       <div class="col-sm-10">
-        <textarea id="front-content" name="front_content" class="form-control" rows="4"></textarea>
+        <textarea id="front-content" name="problem" class="form-control" rows="4"></textarea>
       </div>
     </div>
 
     <div id="flashcard-back" class="form-group">
-      <label for="back-content" class="col-sm-2 control-label">Answer</label>
+      <label for="back-content" class="col-sm-2 control-label">Solution</label>
       <div class="col-sm-10">
-        <textarea id="back-content" name="back-content" class="form-control" rows="4"></textarea>
+        <textarea id="back-content" name="solution" class="form-control" rows="4"></textarea>
       </div>
     </div>
 

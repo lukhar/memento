@@ -45,3 +45,6 @@ docs/_build/
 
 # mac stuff
 .DS_Store
+
+# vim session
+.session
