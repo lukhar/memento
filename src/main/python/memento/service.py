@@ -1,7 +1,7 @@
-from memento.database import Flashcard
+from memento.database.document import FlashcardDocument
 
 
 class FlashcardController:
 
     def save(self, args):
-        Flashcard(problem=args['problem'], solution=args['solution']).save()
+        FlashcardDocument(problem=args['problem'], solution=args['solution']).save()
