@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from memento.service import FlashcardController
+from memento.service import FlashcardService
 
 memento = Flask(__name__)
 
@@ -9,12 +9,18 @@ def main():
     return render_template('index.html')
 
 
-@memento.route('/flashcard/new', methods=['GET'])
+@memento.route('/flashcards/new', methods=['GET'])
 def flashcard_form():
     return render_template('new_flashcard_form.html')
 
 
-@memento.route('/flashcard', methods=['POST'])
+@memento.route('/flashcards', methods=['POST'])
 def add_flashcard():
-    FlashcardController().save(request.form)
-    return 'saved!'
+    ident = FlashcardService().post(request.form)
+    return 'saved! {}'.format(ident)
+
+
+@memento.route('/flashcards/<ident>', methods=['GET'])
+def get_flashcard(ident):
+    flashcard = FlashcardService().get(ident)
+    return '{}'.format(flashcard)
