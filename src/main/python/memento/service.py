@@ -1,11 +1,14 @@
 from memento.database.repository import FlashcardRepository, Flashcard
 
 
-class FlashcardController:
+class FlashcardService:
 
     def __init__(self, flashcardRepository=FlashcardRepository()):
         self.repository = flashcardRepository
 
-    def save(self, args):
+    def post(self, args):
         flashcard = Flashcard(ident=None, problem=args['problem'], solution=args['solution'])
-        self.repository.add(flashcard)
+        return self.repository.add(flashcard)
+
+    def get(self, ident):
+        return self.repository.get(ident)
