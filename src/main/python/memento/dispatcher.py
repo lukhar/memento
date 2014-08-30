@@ -11,7 +11,7 @@ def main():
 
 @memento.route('/flashcards/new', methods=['GET'])
 def flashcard_form():
-    return render_template('new_flashcard_form.html')
+    return render_template('flashcard/new_form.html')
 
 
 @memento.route('/flashcards', methods=['POST'])
@@ -23,4 +23,4 @@ def add_flashcard():
 @memento.route('/flashcards/<ident>', methods=['GET'])
 def get_flashcard(ident):
     flashcard = FlashcardService().get(ident)
-    return '{}'.format(flashcard)
+    return render_template('flashcard/display.html', flashcard=flashcard)
