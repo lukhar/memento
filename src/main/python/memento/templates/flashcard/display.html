@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Flashcard{% endblock title %}
+
+{% block header %}<h1>Flashcard</h1>{% endblock %}
+
+{% block content %}
+  <div id="flashcard-problem" class="panel panel-default">
+    <div class="panel-heading">Problem</div>
+      <div class="panel-body">
+        {{flashcard.problem}}
+      </div>
+    </div>
+  </div>
+
+  <div id="flashcard-solution" class="panel panel-default">
+    <div class="panel-heading">Solution</div>
+      <div class="panel-body">
+        {{flashcard.solution}}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
