@@ -13,6 +13,7 @@ default_task = 'publish'
 
 @init
 def initialize(project):
+    project.set_property('unittest_module_glob', 'test_*')
     project.build_depends_on('flask')
     project.build_depends_on('nose')
     project.build_depends_on('pyassert')
