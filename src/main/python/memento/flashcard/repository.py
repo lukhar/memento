@@ -1,4 +1,4 @@
-from memento.database.document import FlashcardDocument
+from memento.flashcard.document import FlashcardDocument
 from collections import namedtuple
 
 

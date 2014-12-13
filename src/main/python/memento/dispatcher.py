@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from memento.service import FlashcardService
+from memento.flashcard.service import FlashcardService
 
 memento = Flask(__name__)
 
