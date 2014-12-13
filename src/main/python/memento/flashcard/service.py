@@ -1,10 +1,10 @@
-from memento.database.repository import FlashcardRepository, Flashcard
+from memento.flashcard.repository import FlashcardRepository, Flashcard
 
 
 class FlashcardService:
 
-    def __init__(self, flashcardRepository=FlashcardRepository()):
-        self.repository = flashcardRepository
+    def __init__(self, flashcard_repository=FlashcardRepository()):
+        self.repository = flashcard_repository
 
     def post(self, args):
         flashcard = Flashcard(ident=None, problem=args['problem'], solution=args['solution'])
