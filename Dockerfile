@@ -20,16 +20,14 @@ run pip3 install pybuilder
 
 run ln -sT /usr/bin/pip3 /usr/bin/pip
 
-run mongod &
-
 run mkdir /memento
 
 add . /memento
 
 workdir /memento
 
+run PYTHONPATH=$PYTHONPATH:src/main/python:src/unittest/python
+
 run pyb install_dependencies
 
-expose 80
-
-cmd /bin/bash -c "PYTHONPATH=src/main/python python3 run_server.py"
+run mongod &
