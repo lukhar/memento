@@ -6,6 +6,7 @@ use_plugin('python.integrationtest')
 use_plugin('python.install_dependencies')
 use_plugin('python.flake8')
 use_plugin('python.distutils')
+use_plugin('exec')
 
 
 name = 'memento'
@@ -14,8 +15,8 @@ default_task = 'publish'
 
 @init
 def initialize(project):
-    project.set_property('unittest_module_glob', 'test_*')
-    project.set_property('integrationtest_file_glob', 'test_*')
+    project.set_property('run_integration_tests_command',
+                         'nosetests src/integrationtest/python')
 
     project.build_depends_on('flask')
     project.build_depends_on('nose')
