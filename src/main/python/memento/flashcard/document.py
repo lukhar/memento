@@ -1,7 +1,7 @@
 from mongoengine import Document, StringField
 from mongoengine import connect
 
-connect('memento_db')
+database = connect('memento')
 
 
 class FlashcardDocument(Document):
