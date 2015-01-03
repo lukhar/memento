@@ -1,5 +1,7 @@
-from memento.flashcard.document import FlashcardDocument
 from collections import namedtuple
+from mongoengine import ValidationError
+
+from memento.flashcard.document import FlashcardDocument
 
 
 Flashcard = namedtuple('Flashcard', ['ident', 'problem', 'solution'])
@@ -14,7 +16,10 @@ class FlashcardRepository:
         return flashcard.id
 
     def get(self, ident):
-        document = FlashcardDocument.objects(id=ident).first()
+        try:
+            document = FlashcardDocument.objects(id=ident).first()
+        except ValidationError:
+            return None
 
         if document is None:
             return None
