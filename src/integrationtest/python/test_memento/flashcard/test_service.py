@@ -3,17 +3,20 @@ from nose_parameterized import parameterized
 
 from memento.flashcard.repository import FlashcardRepository, Flashcard
 from memento.flashcard.service import FlashcardService
-from memento.flashcard.document import database
 
 
 class TestFalshcardService:
 
+    repository = None
+
     def setup(self):
-        self.repository = FlashcardRepository()
-        self.service = FlashcardService(self.repository)
+        self.service = FlashcardService(TestFalshcardService.repository)
+
+    def setup_class():
+        TestFalshcardService.repository = FlashcardRepository.create('test_memento')
 
     def teardown_class():
-        database.drop_database('memento')
+        TestFalshcardService.repository.database.drop_database('test_memento')
 
     def test_given_valid_flashcard_data_create_new_flashcard_in_repository(self):
         # given

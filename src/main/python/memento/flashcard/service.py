@@ -3,7 +3,7 @@ from memento.flashcard.repository import FlashcardRepository, Flashcard
 
 class FlashcardService:
 
-    def __init__(self, flashcard_repository=FlashcardRepository()):
+    def __init__(self, flashcard_repository=FlashcardRepository.create()):
         self.repository = flashcard_repository
 
     def post(self, args):
